@@ -1,0 +1,13 @@
+<h1>VIN Decoder</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Decode VIN</button>
+</form>
+
+{% if result %}
+<h2>Result:</h2>
+<p>Year: {{ result.year }}</p>
+<p>Make: {{ result.make }}</p>
+<p>Model: {{ result.model }}</p>
+{% endif %}
